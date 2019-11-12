@@ -1,0 +1,49 @@
+<div style="width: 100%;max-width: 1158px;">
+  <h1>Azure Kubernetes Service (AKS) Experience</h1>
+  <p>Microservice time: {{ currentTime }}</p>
+  <p>Coming to you from an Azure Kubernetes Cluster, this web app is an ASP.NET Core 2.1 Angular 5 template and gets the time above from an ASP.NET Core 2.1 API. They are deployed to the Kubernetes Cluster as Docker images, which are built and pushed by Azure CI/CD pipelines.</p>
+  <p>This page documents an experience deploying to an Azure Kubernetes Service (AKS) Cluster. The sceenshots come from Azure Cloud Shell, Azure CI/CD pipeline, &amp; Visual Studio 2019.</p>
+  <!--<ul>
+    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+  </ul>-->
+  <p>
+    An Azure repo (private Git) was created. Two projects were created in Visual Studio 2019 (Web &amp; API). Container Orchestration using Kubernetes/Linux was added to both projects, which included a Docker file and Helm Chart. The web app Docker file needed to be modifed to install Angular dependencies:<br /><br />
+    <img class="img-responsive" src="/img/Docker-File.png" title="Docker file for a DotNet Core 2.1 web application" alt="Docker file for a DotNet Core 2.1 web application" />
+    <br />The Helm Charts were modified to include Application Insights entries and imagePullSecrets being passed an array.<br />
+  </p>
+  <p>
+    Once the Azure Container Repository (ACR) was configured, the Azure CI/CD pipelines were created and run for both Web and API.<br /><br />
+    <img class="img-responsive" src="/img/CI.png" title="Azure Continuous Integration (CI) pipeline task list" alt="Azure Continuous Integration (CI) pipeline task list" />
+    <br />
+  </p>
+  <p>
+    <img class="img-responsive" src="/img/CD.png" title="Azure Continuous Deployment (CD) pipeline task list" alt="Azure Continuous Deployment (CD) pipeline task list" />
+    <br />
+  </p>
+  <p>
+    Deployment to the Azure Kubernetes Cluster can be observed by issuing the following command:<br /><br />
+    <img class="img-responsive" src="/img/get-pods.png" title="Azure Cloud Shell kubectl pod command" alt="Azure Cloud Shell kubectl pod command" />
+    <br />
+    The API uses the default tiller. Web uses it's own Helm Tiller.
+    <br />
+  </p>
+  <p>
+    The Helm Chart can be observed by including Helm Tiller namespace in the following command:<br /><br />
+    <img class="img-responsive" src="/img/get-helm-tiller.png" title="Azure Cloud Shell helm tiller namespace command" alt="Azure Cloud Shell helm tiller namespace command" />
+  </p>
+  <p>
+    In summary, using and modifying templates is a good starting point when deploying ASP.NET Core 2.1 Docker images to an Azure Kubernetes Cluster. Azure repo allows for creation of a CI/CD pipeline with tasks that build and push Docker images to a Kubernetes cluster. With Azure Cloud Shell you can observe and manage Kubernetes Pods, Helm Tillers &amp; Helm Charts, and get Docker container details from the Azure Container Registry.
+  </p>
+  <p>
+    <a href="https://github.com/WebAppDevCo/web-app-dev-ops" target="_blank" style="text-decoration: underline;">View and download sample via GitHub</a>
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <!--<hr />-->
+  <p style="text-align: center;color: #666;margin-bottom: 20px;font-size: 90%;">
+    &copy;2019 - <a href="https://webappdevco.com" target="_blank">WebAppDevCo</a>
+  </p>
+</div>

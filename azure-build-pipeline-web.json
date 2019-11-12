@@ -1,0 +1,407 @@
+{
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "Issue",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "triggers": [
+    {
+      "branchFilters": [
+        "+refs/heads/master"
+      ],
+      "pathFilters": [
+        "+/"
+      ],
+      "batchChanges": true,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": 2
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    }
+  },
+  "properties": {
+  },
+  "tags": [
+  ],
+  "_links": {
+    "self": {
+      "href": "https://dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_apis/build/Definitions/20?revision=6"
+    },
+    "web": {
+      "href": "https://dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_build/definition?definitionId=20"
+    },
+    "editor": {
+      "href": "https://dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_build/designer?id=20&_a=edit-build-definition"
+    },
+    "badge": {
+      "href": "https://dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_apis/build/status/20"
+    }
+  },
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": 1,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "phases": [
+      {
+        "steps": [
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Azure Deployment:Create Or Update Resource Group action on wadoRerouceGroup",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "ConnectedServiceName": "bee410f9-14db-4b5d-82b0-075d48fdfc4d",
+              "action": "Create Or Update Resource Group",
+              "resourceGroupName": "wadoRerouceGroup",
+              "location": "East US",
+              "templateLocation": "Linked artifact",
+              "csmFileLink": "",
+              "csmParametersFileLink": "",
+              "csmFile": "$(System.DefaultWorkingDirectory)/**/containerRegistry-template.json",
+              "csmParametersFile": "",
+              "overrideParameters": "-registryName \"wadocontainerregistry\" -registryLocation \"East US\" -registrySku \"Basic\"",
+              "deploymentMode": "Incremental",
+              "enableDeploymentPrerequisites": "None",
+              "deploymentGroupEndpoint": "",
+              "project": "",
+              "deploymentGroupName": "",
+              "copyAzureVMTags": "true",
+              "runAgentServiceAsUser": "false",
+              "userName": "",
+              "password": "",
+              "outputVariable": "",
+              "deploymentName": "",
+              "deploymentOutputs": "",
+              "addSpnToEnvironment": "false"
+            }
+          },
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build an image",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "e28912f1-0114-4464-802a-a3a35437fd16",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "containerregistrytype": "Azure Container Registry",
+              "dockerRegistryEndpoint": "",
+              "azureSubscriptionEndpoint": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+              "azureContainerRegistry": "wadocontainerregistry.azurecr.io",
+              "command": "Build an image",
+              "dockerFile": "WebAppDevOps.Web/Dockerfile",
+              "arguments": "",
+              "pushMultipleImages": "false",
+              "tagMultipleImages": "false",
+              "imageName": "wadocontainerregistry.azurecr.io/webappdevopsclustere2b9:$(Build.BuildId)",
+              "imageNamesPath": "",
+              "qualifyImageName": "true",
+              "includeSourceTags": "false",
+              "includeLatestTag": "false",
+              "addDefaultLabels": "true",
+              "useDefaultContext": "false",
+              "buildContext": "WebAppDevOps.Web",
+              "imageDigestFile": "",
+              "containerName": "",
+              "ports": "",
+              "volumes": "",
+              "envVars": "",
+              "workingDirectory": "",
+              "entrypointOverride": "",
+              "containerCommand": "",
+              "runInBackground": "true",
+              "restartPolicy": "no",
+              "maxRestartRetries": "",
+              "dockerHostEndpoint": "",
+              "enforceDockerNamingConvention": "true",
+              "memoryLimit": ""
+            }
+          },
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Push an image",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "e28912f1-0114-4464-802a-a3a35437fd16",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "containerregistrytype": "Azure Container Registry",
+              "dockerRegistryEndpoint": "",
+              "azureSubscriptionEndpoint": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+              "azureContainerRegistry": "wadocontainerregistry.azurecr.io",
+              "command": "Push an image",
+              "dockerFile": "",
+              "arguments": "",
+              "pushMultipleImages": "false",
+              "tagMultipleImages": "false",
+              "imageName": "wadocontainerregistry.azurecr.io/webappdevopsclustere2b9:$(Build.BuildId)",
+              "imageNamesPath": "",
+              "qualifyImageName": "true",
+              "includeSourceTags": "false",
+              "includeLatestTag": "false",
+              "addDefaultLabels": "true",
+              "useDefaultContext": "true",
+              "buildContext": "",
+              "imageDigestFile": "",
+              "containerName": "",
+              "ports": "",
+              "volumes": "",
+              "envVars": "",
+              "workingDirectory": "",
+              "entrypointOverride": "",
+              "containerCommand": "",
+              "runInBackground": "true",
+              "restartPolicy": "no",
+              "maxRestartRetries": "",
+              "dockerHostEndpoint": "",
+              "enforceDockerNamingConvention": "true",
+              "memoryLimit": ""
+            }
+          },
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Install Helm 2.9.1",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "068d5909-43e6-48c5-9e01-7c8a94816220",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "helmVersion": "2.9.1",
+              "checkLatestHelmVersion": "true",
+              "installKubeCtl": "true",
+              "kubectlVersion": "1.8.9",
+              "checkLatestKubeCtl": "true"
+            }
+          },
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Helm package",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "connectionType": "Azure Resource Manager",
+              "azureSubscriptionEndpoint": "",
+              "azureResourceGroup": "",
+              "kubernetesCluster": "",
+              "kubernetesServiceEndpoint": "",
+              "namespace": "",
+              "command": "package",
+              "chartType": "Name",
+              "chartName": "",
+              "chartPath": "**/charts/webappdevopsweb",
+              "version": "",
+              "releaseName": "",
+              "overrideValues": "",
+              "valueFile": "",
+              "destination": "$(Build.ArtifactStagingDirectory)",
+              "canaryimage": "false",
+              "upgradetiller": "true",
+              "updatedependency": "false",
+              "save": "true",
+              "install": "true",
+              "recreate": "false",
+              "resetValues": "false",
+              "force": "false",
+              "waitForExecution": "true",
+              "arguments": "",
+              "enableTls": "false",
+              "caCert": "",
+              "certificate": "",
+              "privatekey": "",
+              "tillernamespace": ""
+            }
+          },
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy ARM Templates",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "SourceFolder": "ArmTemplates",
+              "Contents": "**",
+              "TargetFolder": "$(build.artifactstagingdirectory)",
+              "CleanTargetFolder": "false",
+              "OverWrite": "false",
+              "flattenFolders": "false",
+              "preserveTimestamp": "false"
+            }
+          },
+          {
+            "environment": {
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact: drop",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          }
+        ],
+        "name": "Agent job 1",
+        "refName": "Phase_1",
+        "condition": "succeeded()",
+        "target": {
+          "executionOptions": {
+            "type": 0
+          },
+          "allowScriptsAuthAccessOption": false,
+          "type": 1
+        },
+        "jobAuthorizationScope": 1
+      }
+    ],
+    "type": 1
+  },
+  "repository": {
+    "properties": {
+      "fetchDepth": "0",
+      "cleanOptions": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "false"
+    },
+    "id": "565b98d7-a70c-4944-914e-4da7c65b4606",
+    "type": "TfsGit",
+    "name": "WebAppDevOps",
+    "url": "https://dev.azure.com/webappdevops/WebAppDevOps/_git/WebAppDevOps",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+  },
+  "quality": 1,
+  "authoredBy": {
+    "displayName": "Dave Naile",
+    "url": "https://spsprodcus3.vssps.visualstudio.com/A900e5113-452c-4c1d-a034-d0fb59fdcb55/_apis/Identities/555c866c-55f0-4f44-885e-01238427d877",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+      }
+    },
+    "id": "555c866c-55f0-4f44-885e-01238427d877",
+    "uniqueName": "dave@spiderwan.com",
+    "imageUrl": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj",
+    "descriptor": "msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+  },
+  "drafts": [
+  ],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/webappdevops/_apis/build/Queues/8"
+      }
+    },
+    "id": 8,
+    "name": "Hosted Ubuntu 1604",
+    "url": "https://dev.azure.com/webappdevops/_apis/build/Queues/8",
+    "pool": {
+      "id": 8,
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "id": 20,
+  "name": "WebAppDevOps - Web - CI",
+  "url": "https://dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_apis/build/Definitions/20?revision=6",
+  "uri": "vstfs:///Build/Definition/20",
+  "path": "\\",
+  "type": 2,
+  "queueStatus": 0,
+  "revision": 6,
+  "createdDate": "2019-07-06T21:29:22.270Z",
+  "project": {
+    "id": "1d3d5817-2e9a-47e2-8e4a-ffe996962e9c",
+    "name": "WebAppDevOps",
+    "url": "https://dev.azure.com/webappdevops/_apis/projects/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c",
+    "state": 1,
+    "revision": 12,
+    "visibility": 0,
+    "lastUpdateTime": "2019-06-29T02:20:00.620Z"
+  }
+}

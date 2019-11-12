@@ -1,0 +1,592 @@
+{
+  "source": 8,
+  "revision": 12,
+  "description": null,
+  "createdBy": {
+    "displayName": "Dave Naile",
+    "url": "https://spsprodcus3.vssps.visualstudio.com/A900e5113-452c-4c1d-a034-d0fb59fdcb55/_apis/Identities/555c866c-55f0-4f44-885e-01238427d877",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+      }
+    },
+    "id": "555c866c-55f0-4f44-885e-01238427d877",
+    "uniqueName": "dave@spiderwan.com",
+    "imageUrl": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj",
+    "descriptor": "msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+  },
+  "createdOn": "2019-07-02T21:18:50.060Z",
+  "modifiedBy": {
+    "displayName": "Dave Naile",
+    "url": "https://spsprodcus3.vssps.visualstudio.com/A900e5113-452c-4c1d-a034-d0fb59fdcb55/_apis/Identities/555c866c-55f0-4f44-885e-01238427d877",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+      }
+    },
+    "id": "555c866c-55f0-4f44-885e-01238427d877",
+    "uniqueName": "dave@spiderwan.com",
+    "imageUrl": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj",
+    "descriptor": "msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+  },
+  "modifiedOn": "2019-11-09T19:02:48.813Z",
+  "isDeleted": false,
+  "lastRelease": {
+    "id": 175,
+    "name": "Release-41",
+    "artifacts": [
+    ],
+    "_links": {
+    },
+    "description": "Triggered by WebAppDevOps - Web - CI 20191112.1.",
+    "releaseDefinition": {
+      "id": 18,
+      "projectReference": null,
+      "_links": {
+      }
+    },
+    "createdOn": "2019-11-12T16:54:04.683Z",
+    "createdBy": {
+      "displayName": "Dave Naile",
+      "url": "https://spsprodcus3.vssps.visualstudio.com/A900e5113-452c-4c1d-a034-d0fb59fdcb55/_apis/Identities/555c866c-55f0-4f44-885e-01238427d877",
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+        }
+      },
+      "id": "555c866c-55f0-4f44-885e-01238427d877",
+      "uniqueName": "dave@spiderwan.com",
+      "imageUrl": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj",
+      "descriptor": "msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+    }
+  },
+  "variables": {
+  },
+  "variableGroups": [
+  ],
+  "environments": [
+    {
+      "id": 18,
+      "name": "dev",
+      "rank": 1,
+      "owner": {
+        "displayName": "Dave Naile",
+        "url": "https://spsprodcus3.vssps.visualstudio.com/A900e5113-452c-4c1d-a034-d0fb59fdcb55/_apis/Identities/555c866c-55f0-4f44-885e-01238427d877",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+          }
+        },
+        "id": "555c866c-55f0-4f44-885e-01238427d877",
+        "uniqueName": "dave@spiderwan.com",
+        "imageUrl": "https://dev.azure.com/webappdevops/_apis/GraphProfile/MemberAvatars/msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj",
+        "descriptor": "msa.MGM2OWI3M2QtODQ5Yy03NmJjLThjYTgtYmIwOGU1ZWYzZmFj"
+      },
+      "variables": {
+        "dockerAuthSecretName": {
+          "value": "webappdevopsdockerauth"
+        },
+        "namespace": {
+          "value": "webappdevops-a2ba"
+        }
+      },
+      "variableGroups": [
+      ],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 52
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 1
+        }
+      },
+      "deployStep": {
+        "id": 53
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 54
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 2
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": 0
+            },
+            "agentSpecification": null,
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+              ]
+            },
+            "queueId": 8,
+            "demands": [
+            ],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {
+            }
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent phase",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {
+              },
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Azure Deployment:Create Application Insights",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "bee410f9-14db-4b5d-82b0-075d48fdfc4d",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "wadoRerouceGroup",
+                "location": "East US",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/**/aks-applicationInsights.json",
+                "csmParametersFile": "",
+                "overrideParameters": "-applicationInsightsName \"WebAppDevOpsWeb\" -appInsightsLocation \"East US\" -clusterId \"/subscriptions/8ffdd3cf-4580-4fbb-a603-9ac2d6f63020/resourcegroups/wadoRerouceGroup/providers/Microsoft.ContainerService/managedClusters/WebAppDevOpsCLuster\"",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "runAgentServiceAsUser": "false",
+                "userName": "",
+                "password": "",
+                "outputVariable": "",
+                "deploymentName": "",
+                "deploymentOutputs": "deploymentOutputs",
+                "addSpnToEnvironment": "false"
+              }
+            },
+            {
+              "environment": {
+              },
+              "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+              "version": "2.*",
+              "name": "Extract the ApplicationInsights Key",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "targetType": "inline",
+                "filePath": "",
+                "arguments": "",
+                "script": "$deploymentOutputs=(ConvertFrom-Json '$(deploymentOutputs)')\n$aiKey=$deploymentOutputs.aiKey.value\nWrite-Host \"##vso[task.setvariable variable=aiKey;]$aiKey\"",
+                "errorActionPreference": "stop",
+                "failOnStderr": "false",
+                "ignoreLASTEXITCODE": "false",
+                "pwsh": "false",
+                "workingDirectory": ""
+              }
+            },
+            {
+              "environment": {
+              },
+              "taskId": "cbc316a2-586f-4def-be79-488a1f503564",
+              "version": "1.*",
+              "name": "kubectl setup tiller environment",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "kubernetesServiceEndpoint": "",
+                "azureSubscriptionEndpoint": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+                "azureResourceGroup": "wadoRerouceGroup",
+                "kubernetesCluster": "WebAppDevOpsCLuster",
+                "useClusterAdmin": "false",
+                "namespace": "$(namespace)",
+                "command": "apply",
+                "useConfigurationFile": "true",
+                "configurationType": "inline",
+                "configuration": "",
+                "inline": "kind: Namespace\napiVersion: v1\nmetadata:\n  name: $(namespace)\nspec: {}\nstatus: {}\n\n---\n\nkind: ServiceAccount\napiVersion: v1\nmetadata:\n  name: tiller\n  namespace: $(namespace)\n\n---\n\nkind: Role\napiVersion: rbac.authorization.k8s.io/v1beta1\nmetadata:\n  name: tiller-manager\n  namespace: $(namespace)\nrules:\n- apiGroups: [\"\", \"batch\", \"extensions\", \"apps\"]\n  resources: [\"*\"]\n  verbs: [\"*\"]\n\n---\n\nkind: RoleBinding\napiVersion: rbac.authorization.k8s.io/v1beta1\nmetadata:\n  name: tiller-binding\n  namespace: $(namespace)\nsubjects:\n- kind: ServiceAccount\n  name: tiller\n  namespace: $(namespace)\nroleRef:\n  kind: Role\n  name: tiller-manager\n  apiGroup: rbac.authorization.k8s.io",
+                "arguments": "",
+                "secretType": "dockerRegistry",
+                "secretArguments": "",
+                "containerRegistryType": "Azure Container Registry",
+                "dockerRegistryEndpoint": "",
+                "azureSubscriptionEndpointForSecrets": "",
+                "azureContainerRegistry": "",
+                "secretName": "",
+                "forceUpdate": "true",
+                "configMapName": "",
+                "forceUpdateConfigMap": "false",
+                "useConfigMapFile": "false",
+                "configMapFile": "",
+                "configMapArguments": "",
+                "versionOrLocation": "version",
+                "versionSpec": "1.12.8",
+                "checkLatest": "false",
+                "specifyLocation": "",
+                "cwd": "$(System.DefaultWorkingDirectory)",
+                "outputFormat": "json"
+              }
+            },
+            {
+              "environment": {
+              },
+              "taskId": "cbc316a2-586f-4def-be79-488a1f503564",
+              "version": "1.*",
+              "name": "kubectl set imagePullSecrets",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "kubernetesServiceEndpoint": "",
+                "azureSubscriptionEndpoint": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+                "azureResourceGroup": "wadoRerouceGroup",
+                "kubernetesCluster": "WebAppDevOpsCLuster",
+                "useClusterAdmin": "false",
+                "namespace": "$(namespace)",
+                "command": "get",
+                "useConfigurationFile": "false",
+                "configurationType": "configuration",
+                "configuration": "",
+                "inline": "",
+                "arguments": "service",
+                "secretType": "dockerRegistry",
+                "secretArguments": "",
+                "containerRegistryType": "Azure Container Registry",
+                "dockerRegistryEndpoint": "",
+                "azureSubscriptionEndpointForSecrets": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+                "azureContainerRegistry": "wadocontainerregistry.azurecr.io",
+                "secretName": "$(dockerAuthSecretName)",
+                "forceUpdate": "true",
+                "configMapName": "",
+                "forceUpdateConfigMap": "false",
+                "useConfigMapFile": "false",
+                "configMapFile": "",
+                "configMapArguments": "",
+                "versionOrLocation": "version",
+                "versionSpec": "1.12.8",
+                "checkLatest": "false",
+                "specifyLocation": "",
+                "cwd": "$(System.DefaultWorkingDirectory)",
+                "outputFormat": "json"
+              }
+            },
+            {
+              "environment": {
+              },
+              "taskId": "068d5909-43e6-48c5-9e01-7c8a94816220",
+              "version": "0.*",
+              "name": "Install Helm 2.9.1",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "helmVersion": "2.9.1",
+                "checkLatestHelmVersion": "true",
+                "installKubeCtl": "true",
+                "kubectlVersion": "1.10.3",
+                "checkLatestKubeCtl": "false"
+              }
+            },
+            {
+              "environment": {
+              },
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "Helm init",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+                "azureResourceGroup": "wadoRerouceGroup",
+                "kubernetesCluster": "WebAppDevOpsCLuster",
+                "useClusterAdmin": "false",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "",
+                "command": "init",
+                "chartType": "Name",
+                "chartName": "",
+                "chartPath": "",
+                "version": "",
+                "releaseName": "",
+                "overrideValues": "",
+                "valueFile": "",
+                "destination": "$(Build.ArtifactStagingDirectory)",
+                "canaryimage": "false",
+                "upgradetiller": "true",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "false",
+                "resetValues": "false",
+                "force": "false",
+                "waitForExecution": "true",
+                "arguments": "--service-account tiller",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": "$(namespace)"
+              }
+            },
+            {
+              "environment": {
+              },
+              "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+              "version": "0.*",
+              "name": "Helm upgrade",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {
+              },
+              "condition": "succeeded()",
+              "inputs": {
+                "connectionType": "Azure Resource Manager",
+                "azureSubscriptionEndpoint": "92ddc4c1-45d6-4129-a79a-1a347b3b5843",
+                "azureResourceGroup": "wadoRerouceGroup",
+                "kubernetesCluster": "WebAppDevOpsCLuster",
+                "useClusterAdmin": "false",
+                "kubernetesServiceEndpoint": "",
+                "namespace": "$(namespace)",
+                "command": "upgrade",
+                "chartType": "FilePath",
+                "chartName": "https://raw.githubusercontent.com/Microsoft/devops-project-samples/4b4c35a91134db8b3c6ab237973bc58cb53b16d0/helmPackages/sampleChartWithOneService/sampleapp-1.146.0.tgz",
+                "chartPath": "$(System.DefaultWorkingDirectory)/**/webappdevopsweb-*.tgz",
+                "version": "",
+                "releaseName": "azuredevopsweb",
+                "overrideValues": "",
+                "valueFile": "",
+                "destination": "",
+                "canaryimage": "false",
+                "upgradetiller": "false",
+                "updatedependency": "false",
+                "save": "true",
+                "install": "true",
+                "recreate": "false",
+                "resetValues": "false",
+                "force": "true",
+                "waitForExecution": "true",
+                "arguments": "--set image.repository=wadocontainerregistry.azurecr.io/webappdevopsclustere2b9 --set applicationInsights.InstrumentationKey=$(aiKey)  --set image.tag=$(Build.BuildId)  --set imagePullSecrets={$(dockerAuthSecretName)} --timeout 9000",
+                "enableTls": "false",
+                "caCert": "",
+                "certificate": "",
+                "privatekey": "",
+                "tillernamespace": "$(namespace)"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [
+      ],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": 1,
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [
+      ],
+      "currentRelease": {
+        "id": 173,
+        "url": "https://vsrm.dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_apis/Release/releases/173",
+        "_links": {
+        }
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+      },
+      "properties": {
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": [
+        ]
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": [
+        ]
+      },
+      "environmentTriggers": [
+      ],
+      "badgeUrl": "https://vsrm.dev.azure.com/webappdevops/_apis/public/Release/badge/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/18/18"
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "1d3d5817-2e9a-47e2-8e4a-ffe996962e9c:20",
+      "type": "Build",
+      "alias": "Drop",
+      "definitionReference": {
+        "artifactSourceDefinitionUrl": {
+          "id": "https://dev.azure.com/webappdevops/_permalink/_build/index?collectionId=7b40b9bb-bb57-4716-ad0f-69b58f98e5f5&projectId=1d3d5817-2e9a-47e2-8e4a-ffe996962e9c&definitionId=20",
+          "name": ""
+        },
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "20",
+          "name": "20"
+        },
+        "project": {
+          "id": "1d3d5817-2e9a-47e2-8e4a-ffe996962e9c",
+          "name": "WebAppDevOps"
+        }
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "Drop",
+      "triggerConditions": [
+      ],
+      "triggerType": 1
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [
+  ],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "PortalExtension Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    }
+  },
+  "id": 18,
+  "name": "WebAppDevOps - Web - CD",
+  "path": "\\",
+  "projectReference": null,
+  "url": "https://vsrm.dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_apis/Release/definitions/18",
+  "_links": {
+    "self": {
+      "href": "https://vsrm.dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_apis/Release/definitions/18"
+    },
+    "web": {
+      "href": "https://dev.azure.com/webappdevops/1d3d5817-2e9a-47e2-8e4a-ffe996962e9c/_release?definitionId=18"
+    }
+  }
+}
